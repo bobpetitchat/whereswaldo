@@ -17,19 +17,6 @@ body {
 }
 
 
-.click-image {
+.click-character {
     cursor: crosshair
   }
-  
-.sleepingFish {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border: 1px solid orangered;
-    left: 506;
-    top: 232;
-}
-
-.sleepingFish:hover {
-    border: 1px solid red;
-}

@@ -8,7 +8,7 @@ const Gameboard = () => {
   return (
     <div>
       <Characters />
-      <img className="click-image" style={{ width: "700px" }} src="/images/morehq.png" />
+      <img className="click-character" style={{ width: "700px" }} src="/images/morehq.png" />
     </div>
   )
 }

@@ -1,13 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&display=swap");
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: sans-serif;
+    overflow: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header {
+    font-family: "BIZ UDPMincho", serif;
+    text-align: center;
+}
+
+
+.click-image {
+    cursor: crosshair
+  }
+  
+.sleepingFish {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 1px solid orangered;
+    left: 506;
+    top: 232;
+}
+
+.sleepingFish:hover {
+    border: 1px solid red;
 }

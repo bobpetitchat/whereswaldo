@@ -18,8 +18,7 @@ const GetMousePosition = () => {
     },
       [setX, setY]
   )
-  return (x === 498 && y === 233) ? <h1>you just found the sleeping fish</h1> : <h1 style={{ fontSize: "13px" }}>{`x: ${x} / y: ${y}`}</h1> 
-  
+  return <h1 style={{ fontSize: "13px" }}>{`x: ${x} / y: ${y}`}</h1> 
 }
 
 export default GetMousePosition

@@ -1,16 +1,14 @@
-import React from "react"
-import Characters from "./Characters"
+import React, { useRef, useEffect } from "react"
+import Grid from "./Grid"
 
 const Gameboard = () => {
-  const handleClickonCharacters = () => {
-    console.log("got clicked on!")
-  }
   return (
-    <div>
-      <Characters />
-      <img className="click-character" style={{ width: "700px" }} src="/images/morehq.png" />
+    <div className="gameBoard">
+    <Grid />
+    <img style={{ width: "700px", height: "565px" }} src="/images/morehq.png"/>
     </div>
   )
 }
 
 export default Gameboard
+

@@ -1,14 +1,12 @@
 import React from "react"
 import Gameboard from "./components/Gameboard"
 import Header from "./components/Header"
-import GetMousePosition from "./components/GetMousePosition"
-function App() {
- 
+
+const App = () => {
   return (
     <div>
       <Header />
       <Gameboard />
-      <GetMousePosition />
     </div>
   )
   }

@@ -1,22 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&display=swap");
 
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-family: sans-serif;
-    overflow: hidden;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  font-family: sans-serif;
+  overflow: hidden;
 }
 
 .header {
-    font-family: "BIZ UDPMincho", serif;
-    text-align: center;
+  font-family: "BIZ UDPMincho", serif;
+  text-align: center;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(28, 25px);
+  grid-template-rows: repeat(22, 25px);
+  border: 1px solid orangered;
+  position: absolute;
+  cursor: crosshair;
+}
 
-.click-character {
-    cursor: crosshair
-  }
+.grid-item {
+  /* border: 0.5px solid palevioletred; */
+}

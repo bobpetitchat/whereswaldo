@@ -10,7 +10,7 @@ const Gameboard = () => {
   return (
     <div className="gameBoard">
       <Grid handleAlert={handleAlert}/>
-    <img style={{ width: "700px", height: "565px" }} src="/images/morehq.png"/>
+    <img style={{ width: "700px", height: "565px" }} src="/images/morehqfixed.png"/>
     </div>
   )
 }

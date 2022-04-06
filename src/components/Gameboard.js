@@ -1,10 +1,15 @@
-import React, { useRef, useEffect } from "react"
+import React, { useState } from "react"
 import Grid from "./Grid"
 
 const Gameboard = () => {
+ 
+  const handleAlert = (id) => {
+    alert(id)
+  }
+
   return (
     <div className="gameBoard">
-    <Grid />
+      <Grid handleAlert={handleAlert}/>
     <img style={{ width: "700px", height: "565px" }} src="/images/morehq.png"/>
     </div>
   )

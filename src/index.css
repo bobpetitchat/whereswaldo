@@ -13,7 +13,7 @@ body {
   text-align: center;
 }
 
-.grid-container {
+.gridContainer {
   display: grid;
   grid-template-columns: repeat(28, 25px);
   grid-template-rows: repeat(22, 25px);
@@ -22,6 +22,14 @@ body {
   cursor: crosshair;
 }
 
-.grid-item {
-  /* border: 0.5px solid palevioletred; */
+.gridItems.active {
+border: 1px solid blueviolet;
+}
+
+.gridItems {
+  border: 1px solid yellow;
+}
+
+.gridItems:hover {
+  background-color: blue;
 }

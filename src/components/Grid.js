@@ -2,14 +2,13 @@ import React from "react"
 import GridItem from "./GridItem"
 import _ from "lodash"
 
-const Grid = () => {
-     return (
-      <div className="grid-container" style={{ width: "700px", height: "565px" }}>
-        {_.times(616, (i) => (
-          <GridItem key={i} i={i} />
-        ))} 
+const Grid = ({ handleAlert }) => {
+       return (
+      <div className="gridContainer" style={{ width: "700px", height: "565px" }}>
+           <GridItem handleAlert={handleAlert}/>
       </div> 
-    );
+        )
   }
 
 export default Grid
+

@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
 
 body {
   display: flex;
   justify-content: center;
   height: 100vh;
-  font-family: sans-serif;
+  font-family: 'Rubik', sans-serif;
   overflow: hidden;
 }
 
@@ -18,18 +19,9 @@ body {
   grid-template-columns: repeat(28, 25px);
   grid-template-rows: repeat(22, 25px);
   position: absolute;
-  cursor: url("/public/images/pngwing.com (2).png"), auto
-}
-
-.gridItems {
-  border: 1px solid yellow
-}
-
-.consolePopup {
-  position: relative;
-  cursor: url("/public/images/pngwing.com (2).png"), auto
+  cursor: url("/public/images/pngwing.com.png"), auto
 }
 
 button {
-  cursor: url("/public/images/pngwing.com (2).png"), auto
+  cursor: url("/public/images/pngwing.com.png"), auto
 }

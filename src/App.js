@@ -9,10 +9,9 @@ const App = () => {
 
   return (
     <div>
-      <h1>yay</h1>
       <Menu x={x} y={y} showMenu={showMenu} />
-      {/* <Header />
-      <Gameboard /> */}
+      <Header />
+      <Gameboard />
     </div>
   )
   }

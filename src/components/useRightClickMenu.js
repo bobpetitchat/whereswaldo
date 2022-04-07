@@ -10,22 +10,20 @@ function useRightClickMenu () {
         setX(e.pageX)
         setY(e.pageY)
         setShowMenu(true)
-        console.log("handleContextMenu running!")
     }
 
     const handleCreate = () => {
         showMenu && setShowMenu(false)
-        console.log("handleCreate running!")
     }
 
     useEffect(() => {
         document.addEventListener("click", handleCreate)
-        document.addEventListener("contextmenu", handleContextMenu)
+        document.addEventListener("click", handleContextMenu)
         return () => {
             document.removeEventListener("click", handleCreate)
-            document.removeEventListener("contextmenu", handleContextMenu)
+            document.removeEventListener("click", handleContextMenu)
         }
-    })
+    }, [])
     return {x, y, showMenu}
 }
 

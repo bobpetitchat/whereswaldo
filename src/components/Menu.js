@@ -3,42 +3,29 @@ import React from "react"
 const Menu = ({x, y, showMenu}) => {
     const style = () => {
         return {
-            height: 200,
-            width: 150,
+            height: 95,
+            width: 120,
             borderRadius: 4,
-            backgroundColor: "green",
             color: "black",
             display: "flex",
             flexDirection: "column",
+            backgroundColor: "hsla(60, 31%, 93%, 0.774)",
             padding: 10,
             top: y,
             left: x,
             position: "absolute",
-            display: showMenu ? "flex" : "none"
+            display: showMenu ? "flex" : "none",
+            cursor: "pointer",
+            zIndex: "10"
         }
     }
     return (
         <div style={style()}>
-            <div style={style.div}>sleeping fish</div>
-            <div style={style.div}>smidivng fish</div>
-            <div style={style.div}>backwards fish</div>
+            <div style={{color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600"}}>smiling fish</div>
+            <div style={{color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600"}}>sleepy fish</div>
+            <div style={{color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600"}}>backwards fish</div>
         </div>
     )
-}
-
-const style = {
-    div: {
-        flex: 1,
-        adivgnItems: "center",
-        justifyContent: "center",
-        backgroundColor: "blue",
-        color: "red",
-        fontWeight: "bold",
-        cursor: "pointer"
-    },
-    margin: {
-        margin: "10px, 0"
-    }
 }
 
 export default Menu

@@ -1,6 +1,11 @@
 import React from "react"
 
-const Menu = ({x, y, showMenu}) => {
+const Menu = ({ x, y, showMenu, checkFunc }) => {   
+    const handleChoiceClick = (e) => {
+        e.preventDefault()
+        checkFunc(e.currentTarget.id)
+    }
+    
     const style = () => {
         return {
             height: 95,
@@ -20,10 +25,10 @@ const Menu = ({x, y, showMenu}) => {
         }
     }
     return (
-        <div style={style()}>
-            <div style={{color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600"}}>smiling fish</div>
-            <div style={{color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600"}}>sleepy fish</div>
-            <div style={{color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600"}}>backwards fish</div>
+        <div className="popupMenu" style={style()}>
+            <div onClick={handleChoiceClick} className="choices" style={{color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600"}} id="smilingfish">smiling fish</div>
+            <div onClick={handleChoiceClick} className="choices" style={{color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600"}} id="sleepyfish">sleepy fish</div>
+            <div onClick={handleChoiceClick} className="choices" style={{color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600"}} id="backwardsfish">backwards fish</div>
         </div>
     )
 }

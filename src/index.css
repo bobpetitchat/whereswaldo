@@ -12,14 +12,25 @@ body {
 .header {
   font-family: "BIZ UDPMincho", serif;
   text-align: center;
+  font-size: 19px;
+}
+
+.gameBoard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .gridContainer {
   display: grid;
-  grid-template-columns: repeat(28, 25px);
-  grid-template-rows: repeat(22, 25px);
+  grid-template-columns: repeat(34, 25px);
+  grid-template-rows: repeat(30, 25px);
   position: absolute;
   cursor: url("/public/images/pngwing.com.png"), auto
+}
+
+.choices:hover {
+  color: rgba(30, 30, 247, 0.548)
 }
 
 button {

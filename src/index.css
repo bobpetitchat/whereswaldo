@@ -25,22 +25,11 @@ body {
   border: 1px solid yellow
 }
 
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.consolePopup {
+  position: relative;
+  cursor: url("/public/images/pngwing.com (2).png"), auto
 }
 
-.popup-inner {
-  position: relative;
-  padding: 32px;
-  width: 100%;
-  max-width: 640px;
-  background-color: #fff;
+button {
+  cursor: url("/public/images/pngwing.com (2).png"), auto
 }

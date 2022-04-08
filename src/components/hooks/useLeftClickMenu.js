@@ -1,14 +1,9 @@
-import { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 
-const MenuClick = () => {
+function useLeftClickMenu() {
     const [x, setX] = useState(0)
     const [y, setY] = useState(0)
     const [showMenu, setShowMenu] = useState(false)
-    
-    const handleCreate = () => {
-    // initializes showMenu and sets it to false
-        showMenu && setShowMenu(false)
-    }
 
     const handleContextMenu = (e) => {
         e.preventDefault()
@@ -16,7 +11,11 @@ const MenuClick = () => {
         setY(e.pageY)
         setShowMenu(true)
     }
-    
+
+    const handleCreate = () => {
+        showMenu && setShowMenu(false)
+    }
+
     useEffect(() => {
         document.addEventListener("click", handleCreate)
         document.addEventListener("click", handleContextMenu)
@@ -24,8 +23,8 @@ const MenuClick = () => {
             document.removeEventListener("click", handleCreate)
             document.removeEventListener("click", handleContextMenu)
         }
-    }, [])
-    return {x, y, showMenu, setShowMenu}
+    })
+    return { x, y, showMenu }
 }
 
-export default MenuClick
+export default useLeftClickMenu 

@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react"
 import _ from "lodash"
 
-const GridItem = ({takeIDtoCheckFunc}) => {  
+const GridItem = ({handleThirdOperation}) => {  
   const [gridItems, setGridItems] = useState([])
 
   const handleClick = (e) => {
     e.preventDefault()
-    let numberId = e.currentTarget.id
-    takeIDtoCheckFunc("this is the NumberID" + numberId)
+    handleThirdOperation(e.currentTarget.id)
   }
 
   let gridArray = _.times(870, (i) => (

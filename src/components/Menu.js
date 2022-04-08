@@ -1,11 +1,13 @@
 import React from "react"
 
-const Menu = ({ x, y, showMenu, checkFunc }) => {   
-    const handleChoiceClick = (e) => {
+const Menu = ({ x, y, showMenu, handleSecondOperation }) => {   
+
+    const handleGetTarget = (e) => {
         e.preventDefault()
-        checkFunc(e.currentTarget.id)
-    }
-    
+        let target = e.currentTarget.getAttribute("data-target")
+        handleSecondOperation(target)
+      }
+   
     const style = () => {
         return {
             height: 95,
@@ -26,9 +28,9 @@ const Menu = ({ x, y, showMenu, checkFunc }) => {
     }
     return (
         <div className="popupMenu" style={style()}>
-            <div onClick={handleChoiceClick} className="choices" style={{color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600"}} id="smilingfish">smiling fish</div>
-            <div onClick={handleChoiceClick} className="choices" style={{color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600"}} id="sleepyfish">sleepy fish</div>
-            <div onClick={handleChoiceClick} className="choices" style={{color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600"}} id="backwardsfish">backwards fish</div>
+            <div onClick={handleGetTarget} style={{color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600"}} data-target="smilingFish">smiling fish</div>
+            <div onClick={handleGetTarget} style={{color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600"}} data-target="sleepyFish">sleepy fish</div>
+            <div onClick={handleGetTarget} style={{color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600"}} data-target="backwardsFish">backwards fish</div>
         </div>
     )
 }

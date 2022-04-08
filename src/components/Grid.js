@@ -1,10 +1,10 @@
 import React from "react"
 import GridItem from "./GridItem"
 
-const Grid = ({handleThirdOperation}) => {
+const Grid = ({handleGiveID}) => {
   return (
     <div className="gridContainer" style={{ width: "900px", height: "766px" }}>
-      <GridItem handleThirdOperation={handleThirdOperation} />
+      <GridItem handleGiveID={handleGiveID} />
     </div>
   )
 }

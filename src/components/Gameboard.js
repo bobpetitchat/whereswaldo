@@ -12,25 +12,32 @@ const Gameboard = () => {
   let smilingFish = [161, 162, 163, 195, 196, 197, 229, 230, 231]
   let backwardsFish = [655, 656, 657, 690, 691, 622]
 
-  const handleFirstOperation = (id) => {
-    if (!id) return
-    if (id)
+  const handleGiveID = (id) => {
+    console.log("the id is " + id)
     return id
   }
 
-  const handleSecondOperation = (target) => {
+  const handleGiveTarget = (target) => {
+    console.log("the target is " + target)
     return target
   }
 
-  const handleThirdOperation = (id, target) => {
-    handleFirstOperation()
-    handleSecondOperation()
+  const handleFirstOperation = () => {
+    // we will get the id here and check if it belongs to any fish
+    if (sleepyFish.includes(Number(handleGiveID())) === true) return "sleepyFish"
+    if (smilingFish.includes(Number(handleGiveID())) === true) return "smilingFish"
+    if (backwardsFish.includes(Number(handleGiveID())) === true) return "backwardsFish"
+    else return "no target"
   }
 
+  const handleSecondOperation = () => {
+  }
+
+
   return (
-    <div className="gameBoard" onClick={handleThirdOperation}>
-      <Menu x={x} y={y} showMenu={showMenu} setShowMenu={setShowMenu} handleSecondOperation={handleSecondOperation} />
-      <Grid handleThirdOperation={handleThirdOperation} />
+    <div className="gameBoard">
+      <Menu x={x} handleSecondOperation={handleSecondOperation} y={y} showMenu={showMenu} setShowMenu={setShowMenu} handleGiveTarget={handleGiveTarget} />
+      <Grid handleGiveID={handleGiveID} />
       <img style={{ width: "900px", height: "766px" }} src="/images/morehqfixed.png" />
     </div>
   )

@@ -1,6 +1,6 @@
 import React from "react"
 
-const Menu = ({ x, y, showMenu, handleGiveTarget, handleSecondOperation }) => {
+const Menu = ({ x, y, showMenu, handleGiveTarget }) => {
     const style = () => {
         return {
             height: 95,
@@ -23,7 +23,6 @@ const Menu = ({ x, y, showMenu, handleGiveTarget, handleSecondOperation }) => {
     const handleGetTarget = (e) => {
         e.preventDefault()
         handleGiveTarget(e.currentTarget.getAttribute("data-target"))
-        handleSecondOperation()
     }
 
     return (

@@ -22,8 +22,8 @@ body {
 
 .gridContainer {
   display: grid;
-  grid-template-columns: repeat(34, 25px);
-  grid-template-rows: repeat(30, 25px);
+  grid-template-columns: repeat(31, 25px);
+  grid-template-rows: repeat(24, 25px);
   position: absolute;
   cursor: url("/public/images/pngwing.com.png"), auto
 }

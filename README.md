@@ -1,0 +1,1 @@
+this was a full stack project for the odin project's javascript curriculum. the goal of the project is to create a "wheres waldo" type of game that incorporates a backend. the player must find 3 hidden characters.

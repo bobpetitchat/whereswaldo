@@ -40,7 +40,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3",
-    "homepage": "http://bobpetitchat.github.io/whereswaldo/"
-  }
+    "gh-pages": "^3.2.3"
+  },
+  "homepage": "https://bobpetitchat.github.io/whereswaldo/"
 }

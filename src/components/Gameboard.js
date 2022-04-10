@@ -17,47 +17,20 @@ const Gameboard = () => {
   }
 
   Notiflix.Notify.init({
-    width: "280px",
+    width: "325px",
     position: "center-center",
-    distance: "10px",
-    opacity: 1,
-    borderRadius: "5px",
-    rtl: false,
     timeout: 2000,
-    plainText: true,
-    showOnlyTheLastOne: false,
-    clickToClose: false,
-    
-    ID: "NotiflixNotify",
-    className: "notiflix-notify",
-    zindex: 4001,
-    fontFamily: "Quicksand",
-    fontSize: "13px",
-    cssAnimation: true,
-    cssAnimationDuration: 400,
-    cssAnimationStyle: "fade", // "fade" - "zoom" - "from-right" - "from-top" - "from-bottom" - "from-left"
-    closeButton: false,
-    useIcon: true,
-    useFontAwesome: false,
-    fontAwesomeIconStyle: "basic", // "basic" - "shadow"
-    fontAwesomeIconSize: "34px",
   
     success: {
       background: "#fff",
       textColor: "#2DA9FA",
-      childClassName: "notiflix-notify-success",
       notiflixIconColor: "#2DA9FA",
-      fontAwesomeClassName: "fas fa-check-circle",
-      backOverlayColor: "rgba(50,198,130,0.2)",
     },
   
     info: {
       background: "#FB6856",
       textColor: "#fff",
-      childClassName: "notiflix-notify-info",
       notiflixIconColor: "#fff",
-      fontAwesomeClassName: "fas fa-info-circle",
-      backOverlayColor: "rgba(38,192,211,0.2)",
     },
   });
 
@@ -77,7 +50,7 @@ const Gameboard = () => {
   }, [target])
 
   return (
-    <div className="gameBoard">
+    <div style={{display: "flex", flexDirection:"row", justifyContent:"center"}}>
       <Grid handleGiveID={handleGiveID} />
       <Image handleGiveTarget={handleGiveTarget} />
     </div>

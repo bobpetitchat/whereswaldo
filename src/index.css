@@ -1,23 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap");
 
 body {
   display: flex;
   justify-content: center;
   height: 100vh;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
+  margin: 0
 }
 
-.header {
+.headerText {
   font-family: "BIZ UDPMincho", serif;
   text-align: center;
-  font-size: 19px;
-}
-
-.gameBoard {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  margin: 0
 }
 
 .gridContainer {
@@ -32,6 +27,7 @@ body {
   color: rgba(30, 30, 247, 0.548)
 }
 
-button {
+.choices {
   cursor: url("/public/images/pngwing.com.png"), auto
 }
+

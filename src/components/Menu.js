@@ -28,9 +28,9 @@ const Menu = ({ x, y, setShowMenu, showMenu, handleGiveTarget }) => {
 
     return (
         <div className="popupMenu" style={style()}>
-            <div onClick={handleGetTarget} data-target="smilingFish" style={{ color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600" }}>smiling fish</div>
-            <div onClick={handleGetTarget} data-target="sleepyFish" style={{ color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600" }}>sleepy fish</div>
-            <div onClick={handleGetTarget} data-target="backwardsFish" style={{ color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600" }}>backwards fish</div>
+            <div onClick={handleGetTarget} className="choices" data-target="smilingFish" style={{ color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600" }}>smiling fish</div>
+            <div onClick={handleGetTarget} className="choices" data-target="sleepyFish" style={{ color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600" }}>sleepy fish</div>
+            <div onClick={handleGetTarget} className="choices" data-target="backwardsFish" style={{ color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600" }}>backwards fish</div>
         </div>
     )
 }

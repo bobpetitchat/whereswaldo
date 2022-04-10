@@ -39,7 +39,7 @@ const Gameboard = () => {
     <div className="gameBoard">
       <Menu x={x} y={y} showMenu={showMenu} setShowMenu={setShowMenu} handleGiveTarget={handleGiveTarget} />
       <Grid handleGiveID={handleGiveID} />
-      <img style={{ width: "800px", height: "681px" }} src="/images/morehqfixed.png" />
+      <img style={{ width: "800px", height: "681px" }} src="https://raw.githubusercontent.com/bobpetitchat/whereswaldo/main/public/images/morehqfixed.png" />
     </div>
   )
 }

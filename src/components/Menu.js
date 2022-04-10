@@ -1,6 +1,7 @@
 import React from "react"
 
-const Menu = ({ x, y, showMenu, handleGiveTarget }) => {
+const Menu = ({ x, y, setShowMenu, showMenu, handleGiveTarget }) => {
+
     const style = () => {
         return {
             height: 95,

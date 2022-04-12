@@ -9,7 +9,7 @@ function useLeftClickMenu() {
         e.preventDefault()
         setX(e.pageX)
         setY(e.pageY)
-        setShowMenu(true)
+        document.querySelector(".ReactModal__Content.ReactModal__Content--after-open") ? setShowMenu(false) : setShowMenu(true)
     }
 
     const handleCreate = () => {

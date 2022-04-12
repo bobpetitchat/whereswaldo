@@ -17,8 +17,8 @@ const Gameboard = () => {
   }
 
   Notiflix.Notify.init({
-    width: "325px",
-    position: "center-center",
+    width: "300px",
+    position: "center-top",
     timeout: 2000,
   
     success: {
@@ -28,7 +28,7 @@ const Gameboard = () => {
     },
   
     info: {
-      background: "#FB6856",
+      background: "#e07015d7",
       textColor: "#fff",
       notiflixIconColor: "#fff",
     },

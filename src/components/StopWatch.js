@@ -6,7 +6,6 @@ const StopWatch = () => {
     seconds,
     minutes,
     hours,
-    isRunning,
     start,
     pause,
     reset,
@@ -18,7 +17,6 @@ const StopWatch = () => {
       <div style={{fontSize: "38px", color: "#AFD6EC"}}>
        <span>{hours}</span>:<span>{minutes}</span>:<span>{seconds}</span>
       </div>
-      {/* <p>{isRunning ? "Running" : "Not running"}</p> */}
       {/* <button onClick={reset}>Restart</button> 
       <button onClick={start}>Start</button> */}
     </div>

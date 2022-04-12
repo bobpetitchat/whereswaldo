@@ -27,7 +27,9 @@ body {
   color: rgba(30, 30, 247, 0.548)
 }
 
-.choices {
-  cursor: url("/public/images/pngwing.com.png"), auto
+.modal {
+  cursor: pointer;
 }
-
+.bibi {
+  color: #e07015d7
+}

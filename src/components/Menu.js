@@ -1,6 +1,6 @@
 import React from "react"
 
-const Menu = ({ x, y, setShowMenu, showMenu, handleGiveTarget }) => {
+const Menu = ({ x, y, showMenu, handleGiveTarget }) => {
 
     const style = () => {
         return {
@@ -26,7 +26,7 @@ const Menu = ({ x, y, setShowMenu, showMenu, handleGiveTarget }) => {
         handleGiveTarget(e.currentTarget.getAttribute("data-target"))
     }
 
-    return (
+    return ( 
         <div className="popupMenu" style={style()}>
             <div onClick={handleGetTarget} className="choices" data-target="smilingFish" style={{ color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600" }}>smiling fish</div>
             <div onClick={handleGetTarget} className="choices" data-target="sleepyFish" style={{ color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600" }}>sleepy fish</div>

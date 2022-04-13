@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import Modal from "react-modal"
 
 const customStyles = {
@@ -18,6 +18,8 @@ const customStyles = {
     },
 };
 
+Modal.setAppElement("#yourAppElement")
+
 const MyModal = () => {
     const [modalIsOpen, setIsOpen] = useState(false)
     const [name, setName] = useState("")
@@ -36,7 +38,7 @@ const MyModal = () => {
 
     return (
         <div className="modal">
-            <Modal ariaHideApp={false} isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles}>
+            <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles}>
                 <form onSubmit={handleSubmit}>
                     <h2 style={{ fontSize: "14px" }}>Enter your name:</h2>
                     <input style={{ width: "100px" }} value={name} type="text" onChange={e => setName(e.target.value) && console.log("change!")} />

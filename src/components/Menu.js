@@ -1,3 +1,4 @@
+import { hover } from "@testing-library/user-event/dist/hover"
 import React from "react"
 
 const Menu = ({ x, y, showMenu, handleGiveTarget }) => {
@@ -5,7 +6,7 @@ const Menu = ({ x, y, showMenu, handleGiveTarget }) => {
     const style = () => {
         return {
             height: 95,
-            width: 120,
+            width: 130,
             borderRadius: 4,
             color: "black",
             display: "flex",
@@ -30,7 +31,7 @@ const Menu = ({ x, y, showMenu, handleGiveTarget }) => {
         <div className="popupMenu" style={style()}>
             <div onClick={handleGetTarget} className="choices" data-target="smilingFish" style={{ color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600" }}>smiling fish</div>
             <div onClick={handleGetTarget} className="choices" data-target="sleepyFish" style={{ color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600" }}>sleepy fish</div>
-            <div onClick={handleGetTarget} className="choices" data-target="backwardsFish" style={{ color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600" }}>backwards fish</div>
+            <div onClick={handleGetTarget} className="choices" data-target="backwardsFish" style={{ color: "blue", padding: "6px", fontFamily: "monospace", fontSize: "14px", fontWeight: "600"}}>backwards fish</div>
         </div>
     )
 }

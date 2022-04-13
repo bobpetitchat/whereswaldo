@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 
-function useLeftClickMenu() {
+const useLeftClickMenu = () => {
     const [x, setX] = useState(0)
     const [y, setY] = useState(0)
     const [showMenu, setShowMenu] = useState(false)
@@ -9,7 +9,7 @@ function useLeftClickMenu() {
         e.preventDefault()
         setX(e.pageX)
         setY(e.pageY)
-        document.querySelector(".ReactModal__Content.ReactModal__Content--after-open") ? setShowMenu(false) : setShowMenu(true)
+        setShowMenu(true)
     }
 
     const handleCreate = () => {
@@ -17,13 +17,13 @@ function useLeftClickMenu() {
     }
 
     useEffect(() => {
-        document.addEventListener("click", handleCreate)
-        document.addEventListener("click", handleContextMenu)
+        document.querySelector(".gridContainer").addEventListener("click", handleCreate) 
+        document.querySelector(".gridContainer").addEventListener("click", handleContextMenu) 
         return () => {
-            document.removeEventListener("click", handleCreate)
-            document.removeEventListener("click", handleContextMenu)
+            document.querySelector(".gridContainer").removeEventListener("click", handleCreate)
+            document.querySelector(".gridContainer").removeEventListener("click", handleContextMenu) 
         }
-    })
+    }, [showMenu])
     return { x, y, showMenu }
 }
 

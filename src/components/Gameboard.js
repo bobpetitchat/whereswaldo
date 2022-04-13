@@ -1,6 +1,5 @@
 /* eslint-disable */
 import React, { useEffect, useState } from "react"
-import Grid from "./Grid"
 import Image from "./Image"
 import Notiflix, {Notify} from "notiflix/build/notiflix-notify-aio"
 
@@ -35,7 +34,7 @@ const Gameboard = () => {
   });
 
   let sleepyFish = [263, 264, 232, 233, 294, 295, 296, 231, 262]
-  let smilingFish = [147, 148, 178, 179, 180, 209, 210, 211, 177]
+  let smilingFish = [147, 148, 178, 179, 180, 209, 210, 211, 177, 146]
   let backwardsFish = [537, 567, 568, 569, 598, 599, 536, 535]
 
   useEffect(() => {
@@ -50,9 +49,8 @@ const Gameboard = () => {
   }, [target])
 
   return (
-    <div style={{display: "flex", flexDirection:"row", justifyContent:"center"}}>
-      <Grid handleGiveID={handleGiveID} />
-      <Image handleGiveTarget={handleGiveTarget} />
+    <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
+      <Image handleGiveID={handleGiveID} handleGiveTarget={handleGiveTarget} />
     </div>
   )
 }

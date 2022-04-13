@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import _ from "lodash"
 
-const GridItem = ({ handleGiveID }) => {  
+const GridItem = ({handleGiveID }) => {  
   // eslint-disable-next-line
   const [gridItems, setGridItems] = useState([])
 
@@ -18,7 +18,7 @@ const GridItem = ({ handleGiveID }) => {
   }, [])
 
   return (
-    [gridArray]
+    [gridArray]    
   )
 }
 export default GridItem

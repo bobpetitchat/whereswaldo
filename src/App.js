@@ -2,27 +2,32 @@ import React, {useEffect, useState} from "react"
 import Gameboard from "./components/Gameboard"
 import Navbar from "./components/Navbar"
 import Modal from "react-modal"
+import Form from "./components/Form"
+
 Modal.setAppElement("#root")
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [username, setUsername] = useState("")
 
-  const closeModal = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(`${username} submitted!`)
     setIsOpen(false)
   }
 
-  useEffect(() => {
-    document.querySelector(".playButton").addEventListener("click", () => {
-      setIsOpen(true)
-    })
+  const handleChange = (e) => {
+    setUsername(e.target.value)
   }
-  )
+
+  useEffect(() => {
+      setIsOpen(true)
+  }, [])
 
   return (
     <div className="App">
-      <Modal isOpen={isOpen} onRequestClose={closeModal} style={{width: "200px"}}>
-        <input placeholder="Name"/>
-        <button onClick={closeModal}>Start</button>
+      <Modal isOpen={isOpen} style={{ width: "200px" }}>
+        <Form handleChange={handleChange} handleSubmit={handleSubmit} username={username} />
       </Modal>
       <Navbar />
       <Gameboard />

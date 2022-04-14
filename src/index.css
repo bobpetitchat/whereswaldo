@@ -27,9 +27,24 @@ body {
   color: rgba(30, 30, 247, 0.548)
 }
 
-.modal {
-  cursor: pointer;
+.ReactModal__Content.ReactModal__Content--after-open {
+  position: absolute;
+  width: 250px  !important;
+  height: 50px  !important;
+  inset: 40% !important;
+  background-color: rgba(255, 255, 255, 0.726) !important;
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 10px  !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 15px !important;
 }
-.bibi {
-  color: #e07015d7
+
+input:focus {
+  outline: none;
+  margin: 5px !important;
 }

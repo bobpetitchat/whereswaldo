@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/whereswaldo/static/css/main.a8105b85.css",
-    "main.js": "/whereswaldo/static/js/main.1f31f5b5.js",
+    "main.css": "/whereswaldo/static/css/main.700b18b4.css",
+    "main.js": "/whereswaldo/static/js/main.f753c1dd.js",
     "index.html": "/whereswaldo/index.html",
-    "main.a8105b85.css.map": "/whereswaldo/static/css/main.a8105b85.css.map",
-    "main.1f31f5b5.js.map": "/whereswaldo/static/js/main.1f31f5b5.js.map"
+    "main.700b18b4.css.map": "/whereswaldo/static/css/main.700b18b4.css.map",
+    "main.f753c1dd.js.map": "/whereswaldo/static/js/main.f753c1dd.js.map"
   },
   "entrypoints": [
-    "static/css/main.a8105b85.css",
-    "static/js/main.1f31f5b5.js"
+    "static/css/main.700b18b4.css",
+    "static/js/main.f753c1dd.js"
   ]
 }

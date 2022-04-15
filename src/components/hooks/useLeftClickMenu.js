@@ -20,6 +20,7 @@ const useLeftClickMenu = () => {
         document.querySelector(".gridContainer").addEventListener("click", handleCreate) 
         document.querySelector(".gridContainer").addEventListener("click", handleContextMenu) 
         return () => {
+            if (document.querySelector(".gridContainer") === null) return
             document.querySelector(".gridContainer").removeEventListener("click", handleCreate)
             document.querySelector(".gridContainer").removeEventListener("click", handleContextMenu) 
         }

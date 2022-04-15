@@ -1,21 +1,26 @@
 import React from "react"
 
 const Leaderboard = () => {
-  const buttonStyle = {
-    outline: 0,
-    cursor: "pointer",
-    color: "#EE2923",
-    backgroundColor: "#fff",
-    fontWeight: 800,
-    fontSize: "18px",
-    height: "auto",
-    width: "70px",
-    border: "none"
+    return (
+      <div style={{ display: "flex", flexDirection: "column", justifyContent: "flex-start", margin: "45px", border: "1px solid black", width: "1200px", width: "800px", height: "681px" }}>
+        <table>
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Taco</td>
+              <td>2:33</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    )
   }
-  
-  return (
-    <div style={buttonStyle}>Leaderboard</div>
-  )
-}
 
-export default Leaderboard
+  export default Leaderboard
+
+  

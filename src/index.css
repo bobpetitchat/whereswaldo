@@ -11,8 +11,6 @@ body {
 
 .headerText {
   font-family: "BIZ UDPMincho", serif;
-  text-align: center;
-  margin: 0
 }
 
 .gridContainer {
@@ -47,4 +45,8 @@ body {
 input:focus {
   outline: none;
   margin: 5px !important;
+}
+
+button {
+  font-family: "Rubik", sans-serif !important;
 }

@@ -1,8 +1,12 @@
-import React from "react"
-
+import React, { useEffect, useContext } from "react"
+import { UserContext } from "./context/UserContext"
+import { Link } from "react-router-dom"
+import { uniqueId } from "lodash"
 const Leaderboard = () => {
+  const { users } = useContext(UserContext)
     return (
       <div style={{ display: "flex", flexDirection: "column", justifyContent: "flex-start", margin: "45px", border: "1px solid black", width: "1200px", width: "800px", height: "681px" }}>
+        <button style={{height: "20px", backgroundColor: "#fff", border: "none"}}><Link style={{ textDecoration: "none"}} to="/">Go back</Link></button>
         <table>
           <thead>
             <tr>
@@ -11,10 +15,14 @@ const Leaderboard = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Taco</td>
-              <td>2:33</td>
-            </tr>
+          {users.map((user) => {
+    if (user === null) return
+    return ( 
+  <tr key={uniqueId}>
+        <td key={uniqueId}>{user.username}</td>
+        <td key={uniqueId}>time</td>
+  </tr>
+)})}
           </tbody>
         </table>
       </div>
@@ -23,4 +31,4 @@ const Leaderboard = () => {
 
   export default Leaderboard
 
-  
+ 

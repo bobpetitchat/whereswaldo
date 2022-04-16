@@ -6,7 +6,7 @@ import Form from "./components/Form"
 
 Modal.setAppElement("#root")
 
-const App = () => {
+const App = ({}) => {
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {

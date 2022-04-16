@@ -36,7 +36,7 @@ const Gameboard = () => {
   let sleepyFish = [263, 264, 232, 233, 294, 295, 296, 231, 262]
   let smilingFish = [147, 148, 178, 179, 180, 209, 210, 211, 177, 146]
   let backwardsFish = [537, 567, 568, 569, 598, 599, 536, 535]
-
+ 
   useEffect(() => {
     if (target === "sleepyFish") {
       sleepyFish.includes((Number(id))) ? Notify.success("well done! you have found the sleepy fish") : Notify.info("Try again?")

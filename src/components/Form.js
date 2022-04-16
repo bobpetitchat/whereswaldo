@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useContext } from "react"
+import { UserContext } from "./context/UserContext"
 
 const Form = ({ setIsOpen }) => {
-  const [info, setInfo] = useState({ username: "" })
-  const [users, setUsers] = useState([])
+
+  const { setUsers, setInfo, info, users } = useContext(UserContext)
 
   const handleChange = (e) => {
     e.preventDefault()
@@ -21,6 +22,7 @@ const Form = ({ setIsOpen }) => {
   }
 
   useEffect(() => {
+    console.log(users)
   }, [users])
 
   return (

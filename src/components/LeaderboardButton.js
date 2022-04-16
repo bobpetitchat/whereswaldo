@@ -18,6 +18,6 @@ const LeaderboardButton = () => {
   return (
     <Link to="/leaderboard" style={buttonStyle}>Leaderboard</Link>
   )
-}
+} 
 
 export default LeaderboardButton

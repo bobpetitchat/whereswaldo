@@ -8,7 +8,6 @@ const Menu = ({ x, y, showMenu, handleGiveTarget }) => {
             width: 130,
             borderRadius: 4,
             color: "black",
-            display: "flex",
             flexDirection: "column",
             backgroundColor: "hsla(60, 31%, 93%, 0.774)",
             padding: 10,

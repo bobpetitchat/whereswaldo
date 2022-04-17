@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useContext } from "react"
 import Gameboard from "./components/Gameboard"
 import Navbar from "./components/Navbar"
 import Modal from "react-modal"
 import Form from "./components/Form"
+import { UserContext } from "./components/context/UserContext"
 
 Modal.setAppElement("#root")
 
-const App = ({}) => {
+const App = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const {users} = useContext(UserContext)
 
   useEffect(() => {
-    setIsOpen(true)
+    users.length === 0 ? setIsOpen(true) : setIsOpen(false)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

@@ -24,6 +24,7 @@ const useLeftClickMenu = () => {
             document.querySelector(".gridContainer").removeEventListener("click", handleCreate)
             document.querySelector(".gridContainer").removeEventListener("click", handleContextMenu) 
         }
+   // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [showMenu])
     return { x, y, showMenu }
 }

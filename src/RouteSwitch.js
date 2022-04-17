@@ -6,22 +6,19 @@ import { UserContext } from "./components/context/UserContext"
 import { useStopwatch } from "react-timer-hook"
 
 const RouteSwitch = () => {
-  const [info, setInfo] = useState({username: ""})
+  const [info, setInfo] = useState({username: "", time: ""})
   const [users, setUsers] = useState([])
-  const [times, setTimes] = useState({})
   const { seconds, minutes, start, isRunning, pause } = useStopwatch({ autoStart: false })
 
     useEffect(() => {
     if (isRunning) return 
     if (!isRunning) {
-      console.log(times)
-      setTimes(5)
     }
   })
 
   return (
     <BrowserRouter>
-     <UserContext.Provider value={{info, setInfo, users, setUsers, seconds, minutes, start, isRunning, pause, times}}>
+     <UserContext.Provider value={{info, setInfo, users, setUsers, seconds, minutes, start, isRunning, pause}}>
       <Routes>
         <Route path="/" element={<App />} />    
         <Route path="/leaderboard" element={<Leaderboard />} />

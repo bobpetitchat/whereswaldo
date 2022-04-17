@@ -1,14 +1,11 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext } from "react"
 import { UserContext } from "./context/UserContext"
 import { Link } from "react-router-dom"
 import uniqid from "uniqid"
 
 const Leaderboard = () => {
-  const { users, times } = useContext(UserContext)
+  const { users, minutes, seconds } = useContext(UserContext)
 
-  useEffect(() => {
-    console.log(times)
-  }, [])
   return (
     <div style={{ display: "flex", flexDirection: "column", justifyContent: "flex-start", margin: "45px", border: "1px solid black", width: "800px", height: "681px" }}>
       <button style={{ height: "20px", backgroundColor: "#fff", border: "none" }}><Link style={{ textDecoration: "none" }} to="/">Go back</Link></button>
@@ -21,10 +18,13 @@ const Leaderboard = () => {
         </thead>
         <tbody>
           {users.map((user) => {
-            if (user === null) return
+            if (user.username === "") {
+              user.username = "Visitor"
+            }
             return (
               <tr key={uniqid()}>
                 <td>{user.username}</td>
+                <td>{minutes + seconds}</td>
               </tr>
             )
           })}
@@ -35,4 +35,5 @@ const Leaderboard = () => {
 }
 
 export default Leaderboard
+
 

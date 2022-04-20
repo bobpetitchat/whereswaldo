@@ -10,12 +10,6 @@ const RouteSwitch = () => {
   const [users, setUsers] = useState([])
   const { seconds, minutes, start, isRunning, pause } = useStopwatch({ autoStart: false })
 
-    useEffect(() => {
-    if (isRunning) return 
-    if (!isRunning) {
-    }
-  })
-
   return (
     <BrowserRouter>
      <UserContext.Provider value={{info, setInfo, users, setUsers, seconds, minutes, start, isRunning, pause}}>

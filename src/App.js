@@ -36,10 +36,10 @@ const App = () => {
     <div className="App" style={{ display: "flex", flexDirection: "column" }}>
       <Navbar />
       <div style={{ display: "flex", flexDirection: "row" }}>
+      <TargetArraysContext.Provider value={{arrays, db}}> 
         <Modal isOpen={isOpen} style={{ width: "200px" }}>
           <Form setIsOpen={setIsOpen} />
         </Modal>
-        <TargetArraysContext.Provider value={{arrays}}> 
           <Gameboard />
         </TargetArraysContext.Provider>
         </div>

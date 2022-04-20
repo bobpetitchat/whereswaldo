@@ -7,29 +7,39 @@ import { TargetArraysContext } from "./context/TargetArraysContext"
 const Gameboard = () => {
 
   const { arrays } = useContext(TargetArraysContext)
-  
   const [id, setID] = useState("")
-  const [target, setTarget] = useState("")
+  const [target, setTarget] = useState("")  
+  const [completedArr, setCompletedArr] = useState([])  
+
+  useEffect(() => {
+    if (completedArr.length >= 3) {
+      Notify.success("WELL DONE! You win")
+    }
+  })
 
   const callTheFish = (target) => {
     // fixing string format
     if (target === "smilingFish") {
+      setCompletedArr([...completedArr, target])
       return "smiling fish!"
     } else if (target === "backwardsFish") {
+      setCompletedArr([...completedArr, target])
       return "fish going against current!"
-    } else {
+    } else if (target === "sleepyFish") {
+      setCompletedArr([...completedArr, target])
       return "sleepy fish!"
     }
   }
 
   useEffect(() => {
+    console.log(id)
     for (let i = 0; i < arrays.length; i++) {
       if (target === Object.entries(arrays[i])[0][0]) {
         Object.entries(arrays[i])[0][1].includes((Number(id))) ? Notify.success("well done! you have found the " + callTheFish(target)) : Notify.info("Try again?")
       }      
     }
   }, [target])
-
+  
 
   const handleGiveID = (id) => {
     setID(id)

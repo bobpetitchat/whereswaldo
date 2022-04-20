@@ -14,9 +14,17 @@ Modal.setAppElement("#root")
 const App = () => {
 
   const [isOpen, setIsOpen] = useState(false)
-  const { users } = useContext(UserContext)
+  const { users, isRunning, minutes, seconds } = useContext(UserContext)
+  // targets array database
   const [arrays, setArrays] = useState([])
   const arrayCollectionRef = collection(db, "choices")
+  // form databse
+  const formColRef = collection(db, "form")
+
+  useEffect(() => {
+    users.length === 0 ? setIsOpen(true) : setIsOpen(false)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   useEffect(() => {
     const getArrays = async () => {
@@ -24,19 +32,22 @@ const App = () => {
       setArrays(data.docs.map((doc) => ({ ...doc.data() })))
     }
     getArrays()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []
   )
 
   useEffect(() => {
-    users.length === 0 ? setIsOpen(true) : setIsOpen(false)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+    if (isRunning) return 
+    if (!isRunning) {
+      console.log(minutes + seconds)
+    }
+  })
 
   return (
     <div className="App" style={{ display: "flex", flexDirection: "column" }}>
       <Navbar />
       <div style={{ display: "flex", flexDirection: "row" }}>
-      <TargetArraysContext.Provider value={{arrays, db}}> 
+      <TargetArraysContext.Provider value={{arrays}}> 
         <Modal isOpen={isOpen} style={{ width: "200px" }}>
           <Form setIsOpen={setIsOpen} />
         </Modal>

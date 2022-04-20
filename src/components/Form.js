@@ -1,20 +1,9 @@
 import React, { useContext, useEffect } from "react"
 import { UserContext } from "./context/UserContext"
-import { addDoc, collection, getDoc } from "firebase/firestore"
-import { TargetArraysContext } from "./context/TargetArraysContext"
+
 const Form = ({ setIsOpen }) => {
 
-  const { setUsers, setInfo, info, users, isRunning, minutes, seconds} = useContext(UserContext)
-  const { db } = useContext(TargetArraysContext)
-  const formColRef = collection(db, "form")
-
-  useEffect(() => {
-    if (isRunning) return 
-    if (!isRunning) {
-      console.log(minutes + seconds)
-    }
-    
-  })
+  const { setUsers, setInfo, info, users} = useContext(UserContext)
 
    const handleChange = (e) => {
     e.preventDefault()
@@ -31,7 +20,6 @@ const Form = ({ setIsOpen }) => {
       ...info
     })
     setUsers([...users, info])
-    addDoc(formColRef, {...info})
   }
 
   return (

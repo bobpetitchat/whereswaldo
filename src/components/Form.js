@@ -3,7 +3,7 @@ import { UserContext } from "./context/UserContext"
 
 const Form = ({ setIsOpen }) => {
 
-  const { setUsers, setInfo, info, users} = useContext(UserContext)
+  const { setUsers, setInfo, info, users } = useContext(UserContext)
 
    const handleChange = (e) => {
     e.preventDefault()
@@ -16,6 +16,7 @@ const Form = ({ setIsOpen }) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     setIsOpen(false)
+    if (info.username === "") return
     setInfo({
       ...info
     })

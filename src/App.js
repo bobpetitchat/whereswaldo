@@ -14,12 +14,11 @@ Modal.setAppElement("#root")
 const App = () => {
 
   const [isOpen, setIsOpen] = useState(false)
-  const { users, isRunning, minutes, seconds } = useContext(UserContext)
+  const { users } = useContext(UserContext)
   // targets array database
   const [arrays, setArrays] = useState([])
   const arrayCollectionRef = collection(db, "choices")
   // form databse
-  const formColRef = collection(db, "form")
 
   useEffect(() => {
     users.length === 0 ? setIsOpen(true) : setIsOpen(false)
@@ -36,18 +35,11 @@ const App = () => {
     }, []
   )
 
-  useEffect(() => {
-    if (isRunning) return 
-    if (!isRunning) {
-      console.log(minutes + seconds)
-    }
-  })
-
   return (
     <div className="App" style={{ display: "flex", flexDirection: "column" }}>
       <Navbar />
       <div style={{ display: "flex", flexDirection: "row" }}>
-      <TargetArraysContext.Provider value={{arrays}}> 
+      <TargetArraysContext.Provider value={{arrays, db}}> 
         <Modal isOpen={isOpen} style={{ width: "200px" }}>
           <Form setIsOpen={setIsOpen} />
         </Modal>

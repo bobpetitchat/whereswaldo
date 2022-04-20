@@ -5,21 +5,27 @@ import Modal from "react-modal"
 import Form from "./components/Form"
 import { UserContext } from "./components/context/UserContext"
 import { db } from "./firebase-config"
-import { collection } from "firebase/firestore"
+import { collection, getDocs } from "firebase/firestore"
+import { TargetArraysContext } from "./components/context/TargetArraysContext"
+
 Modal.setAppElement("#root")
+// for the modal
 
 const App = () => {
-  const [arrays, setArrays] = useState([])
-  const arrayCollectionRef = collection(db, "choices")
-  useEffect(() => {
-    const getArrays = async () => {
-
-    }
-    getArrays()
-  }, [])
 
   const [isOpen, setIsOpen] = useState(false)
   const { users } = useContext(UserContext)
+  const [arrays, setArrays] = useState([])
+  const arrayCollectionRef = collection(db, "choices")
+
+  useEffect(() => {
+    const getArrays = async () => {
+      const data = await getDocs(arrayCollectionRef)
+      setArrays(data.docs.map((doc) => ({ ...doc.data() })))
+    }
+    getArrays()
+    }, []
+  )
 
   useEffect(() => {
     users.length === 0 ? setIsOpen(true) : setIsOpen(false)
@@ -33,8 +39,10 @@ const App = () => {
         <Modal isOpen={isOpen} style={{ width: "200px" }}>
           <Form setIsOpen={setIsOpen} />
         </Modal>
-        <Gameboard />
-      </div>
+        <TargetArraysContext.Provider value={{arrays}}> 
+          <Gameboard />
+        </TargetArraysContext.Provider>
+        </div>
     </div>
   )
 }

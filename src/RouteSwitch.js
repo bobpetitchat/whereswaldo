@@ -5,9 +5,7 @@ import Leaderboard from "./components/Leaderboard"
 import { UserContext } from "./components/context/UserContext"
 import { useStopwatch } from "react-timer-hook"
 
-const RouteSwitch = () => {
-
-  
+const RouteSwitch = () => {  
   const [info, setInfo] = useState({username: "", time: ""})
   const [users, setUsers] = useState([])
   const { seconds, minutes, start, isRunning, pause } = useStopwatch({ autoStart: false })
